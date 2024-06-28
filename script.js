@@ -9,7 +9,7 @@ try {
     'path',
     'textbox',
     'upload',
-    'background',
+    // 'background',
     'undo',
     'redo',
     'save',
@@ -21,10 +21,13 @@ try {
   // define custom shapes
   // if this value is undefined or its length is 0, default shapes will be used
   const shapes = [];
+
+  // define custom images
+  // if this value is undefined or its length is 0, default images will be used
   const images = [
     `screenshots/astronaut.png`,
   ];
-  console.log('before initialize image editor');
+  
   var imgEditor = new ImageEditor('#image-editor-container', buttons, shapes, images);
   console.log('initialize image editor');
 
