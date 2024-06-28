@@ -112,6 +112,19 @@ body {
   height: -ms-fill-available;
   height: fill-available;
   height: -moz-fill-available;
+  overflow-y: auto;
+  scrollbar-width: thin; /* Para navegadores Firefox */
+  scrollbar-color: rgba(0, 0, 0, 0.5) transparent; /* Para navegadores Firefox */
+}
+.toolpanel .content::-webkit-scrollbar {
+  width: 8px;
+}
+.toolpanel .content::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5); 
+  border-radius: 4px; 
+}
+.toolpanel .content::-webkit-scrollbar-track {
+  background: transparent; 
 }
 
 .toolpanel .title {
@@ -125,7 +138,7 @@ body {
   text-transform: uppercase;
 }
 
-.toolpanel .content .hide-show-handler {
+.toolpanel  .hide-show-handler {
   position: absolute;
   top: calc(50% - 40px);
   right: -42px;
@@ -143,7 +156,7 @@ body {
   background-position: center center;
 }
 
-.toolpanel.closed .content .hide-show-handler {
+.toolpanel.closed  .hide-show-handler {
   background-image: url('caret-right.svg');
 }
 
@@ -160,6 +173,26 @@ body {
   height: 32px;
   display: inline-block;
   margin: 9px;
+}
+
+#images-panel .button {
+  cursor: pointer;
+  line-height: 0;
+  overflow: hidden;
+  padding: 0;
+  width: fit-content;
+  height: 80px;
+  display: inline-block;
+  margin: 9px;
+  
+}
+
+#images-panel .button:hover {
+  opacity: 0.8;
+}
+
+#images-panel .button img {  
+  height:80px;
 }
 
 #background-panel .canvas-size-setting input {
