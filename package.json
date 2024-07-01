@@ -1,0 +1,11 @@
+{ 
+  "name": "fabricjs-image-editor-origin",
+  "devDependencies": {
+    "webpack": "^5.92.1",
+    "webpack-cli": "^5.1.4"
+  },
+  "scripts": {
+    "watch": "webpack --watch",
+    "build": "webpack --mode production"
+  }
+}
