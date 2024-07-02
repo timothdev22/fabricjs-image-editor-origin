@@ -42,7 +42,17 @@ This image editor allows users to draw default shapes, pen-drawing, line, curve 
     `screenshots/astronaut.png`,
   ];
 
-  var imgEditor = new ImageEditor('#image-editor-container', buttons, shapes, images);
+  const options = {
+    buttons: buttons,
+    shapes: shapes,
+    images: images,    
+    dimensions: {
+      width: 1360,
+      height: 768
+    }
+  };  
+
+  var imgEditor = new ImageEditor('#image-editor-container', options);
 ```
 
 ## Save/Load Editor status
