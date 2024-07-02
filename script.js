@@ -9,7 +9,7 @@ try {
     'path',
     'textbox',
     'upload',
-    // 'background',
+    'background',
     'undo',
     'redo',
     'save',
@@ -27,8 +27,19 @@ try {
   const images = [
     `screenshots/astronaut.png`,
   ];
+
+  // define options
+  const options = {
+    buttons: buttons,
+    shapes: shapes,
+    images: images,    
+    dimensions: {
+      width: 1360,
+      height: 768
+    }
+  };
   
-  var imgEditor = new ImageEditor('#image-editor-container', buttons, shapes, images);
+  var imgEditor = new ImageEditor('#image-editor-container', options);
   console.log('initialize image editor');
 
   // let status = imgEditor.getCanvasJSON();
