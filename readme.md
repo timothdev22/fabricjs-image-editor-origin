@@ -1,7 +1,7 @@
 # Fabric.JS Image Editor
 This image editor allows users to draw default shapes, pen-drawing, line, curve + straight path, text, png/jpg/svg images on browser.
 
-[Demo!](https://fabricjs-image-editor-f62330.netlify.app)
+[Demo!](https://fabricjs-image-editor-origin.vercel.app)
 ![Positioning Example](screenshots/editor.jpg)
 
 ## Dependency
