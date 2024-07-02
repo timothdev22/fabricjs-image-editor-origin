@@ -31,6 +31,7 @@ body {
   border: 0;
   border-radius: unset;
   outline: none;
+  cursor: pointer;
 }
 
 .toolbar button.active,
@@ -74,8 +75,7 @@ body {
   right: 0;
   border: 1px solid #ccc;
 } */
-.zoom-level-container {  
-  padding: 10px 20px;  
+.zoom-level-container { 
   margin-left: auto;
 }
 
