@@ -18,11 +18,21 @@ module.exports = {
         './lib/copyPaste.js',
         './lib/utils.js',
         './lib/zoom.js',
-        './lib/saveInBrowser.js'
+        './lib/saveInBrowser.js',
+        './lib/style.css'
     ],
     output: {
         filename: 'fabricjs-image-editor-origin.js',
         path: path.resolve(__dirname, 'dist'),
+    },
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                exclude: /node_modules/,
+                use: ['style-loader', 'css-loader']
+            }
+        ]
     },
     mode: 'development', // Altere para 'production' para minificação
 };
