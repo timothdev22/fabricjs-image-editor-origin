@@ -42,8 +42,8 @@ try {
   var imgEditor = new ImageEditor('#image-editor-container', options);
   console.log('initialize image editor');
 
-  // let status = imgEditor.getCanvasJSON();
-  // imgEditor.setCanvasStatus(status);
+  let status = imgEditor.getCanvasJSON();
+  imgEditor.setCanvasStatus(status);
 
 } catch (_) {
   const browserWarning = document.createElement('div')
