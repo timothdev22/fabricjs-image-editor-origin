@@ -28,8 +28,8 @@ button {
 }
 
 .toolbar button {
-  width: 64px;
-  height: 54px;
+  width: 40px;
+  height: 40px;
   opacity: .55;
   clear: both;
   border: 0;
@@ -48,8 +48,8 @@ button {
 
 .toolbar button img,
 .toolbar button svg {
-  width: 22px;
-  height: 22px;
+  width: 16px;
+  height: 16px;
 }
 
 .main-panel {
@@ -445,4 +445,19 @@ button {
   touch-action: none;
   cursor: default;
   color: #888;
+  font-size: 0.8em;
+}
+
+
+.main-panel .toolpanel .tab-container button {
+      height: 30px !important;      
+      background-color: #fff;
+      background-clip: padding-box;
+      border-radius: 4px;
+      color: #333;
+      border: 1px solid #ddd;
+      text-align: center;  
+      cursor: pointer;
+      outline: none;
+      font-size: 13px;
 }
