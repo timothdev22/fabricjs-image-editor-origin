@@ -19,6 +19,7 @@ module.exports = {
         './lib/utils.js',
         './lib/zoom.js',
         './lib/saveInBrowser.js',
+        './lib/fullscreen.js',
         './lib/style.css'
     ],
     output: {

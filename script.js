@@ -15,7 +15,8 @@ try {
     'save',
     'download',
     'clear',
-    'images'
+    'images',
+    'fullscreen'
   ];
 
   // define custom shapes
