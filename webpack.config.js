@@ -20,6 +20,7 @@ module.exports = {
         './lib/zoom.js',
         './lib/saveInBrowser.js',
         './lib/fullscreen.js',
+        './lib/notification.js',
         './lib/style.css'
     ],
     output: {

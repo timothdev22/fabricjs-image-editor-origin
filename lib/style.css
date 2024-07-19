@@ -124,6 +124,11 @@ button {
   z-index: 9999;
 }
 
+.toolpanel h4 {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
 .toolpanel.closed {
   left: -300px;
 }
@@ -459,4 +464,44 @@ button {
       cursor: pointer;
       outline: none;
       font-size: 13px;
+}
+
+.toast-notification{
+  min-width: 200px;
+  height:50px;
+  background-color:white;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  top:20px;
+  right: 20px;
+  margin-bottom:20px;
+  margin-left:0;
+  position:absolute;
+  z-index:1;
+  display:flex;
+  flex-direction:row;
+  align-items: center;   
+  gap: 10px;
+}
+
+.toast-notification .message-container{
+  width:80%;  
+  color:white;
+  font-size: 0.8rem;
+  padding: 10px 10px 10px 15px;
+}
+
+.toast-notification .close-notification{
+  width:20%;
+  text-align: center;
+}
+.toast-notification .close-notification > svg {
+ 
+  font-weight:900;
+  color:white;
+  cursor:pointer;
+ 
+    width: 16px;
+    height: 16px;
+
 }
