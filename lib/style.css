@@ -292,11 +292,13 @@ button {
   display: none;
 }
 
-.toolpanel#select-panel.type-textbox .text-section {
+.toolpanel#select-panel.type-textbox .text-section,
+.toolpanel#select-panel.type-i-text .text-section {
   display: block;
 }
 
-.toolpanel#select-panel.type-textbox .fill-section {
+.toolpanel#select-panel.type-textbox .fill-section,
+.toolpanel#select-panel.type-i-text .fill-section  {
   display: none;
 }
 
