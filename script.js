@@ -16,7 +16,8 @@ try {
     'download',
     'clear',
     'images',
-    'fullscreen'
+    'fullscreen',
+    'templates'
   ];
 
   // define custom shapes
@@ -29,6 +30,19 @@ try {
     `screenshots/astronaut.png`,
   ];
 
+  const templates = [
+    {
+        name: "Template 1",
+        preview: "path/to/preview1.png",
+        data: '{"objects":[{"type":"rect","left":100,"top":100,"width":50,"height":50,"fill":"red"}]}'
+    },
+    {
+        name: "Template 2",
+        preview: "path/to/preview2.png",
+        data: '{"objects":[{"type":"circle","left":150,"top":150,"radius":30,"fill":"blue"}]}'
+    }
+];
+
   // define options
   const options = {
     buttons: buttons,
@@ -37,7 +51,8 @@ try {
     dimensions: {
       width: 1360,
       height: 768
-    }
+    },
+    templates: templates
   };
   
   var imgEditor = new ImageEditor('#image-editor-container', options);

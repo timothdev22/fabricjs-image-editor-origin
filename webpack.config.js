@@ -7,6 +7,7 @@ module.exports = {
         './lib/canvas.js',
         './lib/shapes.js',
         './lib/images.js',
+        './lib/templates.js',
         './lib/freeDrawSettings.js',
         './lib/canvasSettings.js',
         './lib/selectionSettings.js',
