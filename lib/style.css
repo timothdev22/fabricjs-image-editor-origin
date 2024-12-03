@@ -137,6 +137,10 @@ button {
   display: initial;
 }
 
+.toolpanel.visible:not(.closed) ~ .canvas-holder {
+  padding-left: 300px;
+}
+
 .toolpanel .content {
   padding: 20px;
   position: relative;
