@@ -364,6 +364,10 @@ button {
   outline: none;
 }
 
+.toolpanel .tab-content .sp-replacer {
+  width: 100%;
+}
+
 .toolpanel .input-container .sp-replacer {
   width: 50%;
 }
