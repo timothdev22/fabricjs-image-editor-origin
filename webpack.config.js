@@ -22,6 +22,7 @@ module.exports = {
         './lib/saveInBrowser.js',
         './lib/fullscreen.js',
         './lib/notification.js',
+        './lib/animation.js',
         './lib/style.css'
     ],
     output: {
