@@ -61,3 +61,41 @@ This image editor allows users to draw default shapes, pen-drawing, line, curve 
   let status = imgEditor.getCanvasJSON();
   imgEditor.setCanvasStatus(status);
 ```
+
+## Réguas e Guias
+
+Esta funcionalidade permite adicionar réguas e linhas-guia para auxiliar no alinhamento de objetos, similar à função "Mostrar régua e guias (Shift+R)" do Canva.com.
+
+### Como usar:
+
+1. **Ativar/Desativar Réguas**: 
+   - Clique no botão de régua na barra de ferramentas
+   - Ou use o atalho de teclado `Shift+R`
+
+2. **Criar Guias**:
+   - Clique e arraste a partir da régua horizontal para criar uma guia horizontal
+   - Clique e arraste a partir da régua vertical para criar uma guia vertical
+
+3. **Mover Guias**:
+   - Selecione uma guia e arraste-a para reposicioná-la
+   - Guias horizontais só podem ser movidas verticalmente
+   - Guias verticais só podem ser movidas horizontalmente
+
+4. **Excluir Guias**:
+   - Dê um duplo clique em uma guia para removê-la
+
+As réguas mostram medidas em pixels e se ajustam automaticamente ao zoom do canvas.
+
+Para ativar esta funcionalidade, inclua 'ruler' na lista de botões da barra de ferramentas:
+
+```javascript
+const buttons = [
+  'select',
+  'shapes',
+  'draw',
+  'ruler',  // Adicione esta linha para incluir o botão de réguas
+  'undo',
+  'redo',
+  // ... outros botões
+];
+```

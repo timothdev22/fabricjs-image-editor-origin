@@ -3,6 +3,8 @@ const path = require('path');
 module.exports = {
     entry: [
         './lib/core.js',
+        './lib/utils.js',
+        './lib/saveInBrowser.js',
         './lib/toolbar.js',
         './lib/canvas.js',
         './lib/shapes.js',
@@ -17,12 +19,12 @@ module.exports = {
         './lib/tip.js',
         './lib/upload.js',
         './lib/copyPaste.js',
-        './lib/utils.js',
         './lib/zoom.js',
-        './lib/saveInBrowser.js',
+        './lib/ruler.js',
         './lib/fullscreen.js',
         './lib/notification.js',
         './lib/animation.js',
+        './lib/frames.js',
         './lib/style.css'
     ],
     output: {
