@@ -2,6 +2,7 @@ const path = require('path');
 
 module.exports = {
     entry: [
+        './vendor/context-menu.js',
         './lib/core.js',
         './lib/utils.js',
         './lib/saveInBrowser.js',
