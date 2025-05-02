@@ -587,7 +587,6 @@ button {
   background-color: #f0f0f0;
 }
 
-/* Tooltip de informação para guias e margens */
 .guide-tooltip {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.7);
@@ -599,13 +598,11 @@ button {
   z-index: 1000;
 }
 
-/* Ajuste do canvas para acomodar réguas */
 .canvas-holder .content.with-rulers {
   padding-top: 20px;
   padding-left: 20px;
   transition: padding 0.2s ease;
 }
-
 
 .canvas-holder .content .canvas-container.dragging {
   border: 2px #4368a9 dashed;
@@ -665,4 +662,49 @@ button {
 .ContextMenu-divider {
   height: 1px;
   margin: 4px 0;
+}
+
+#templates-panel .list-templates {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+#templates-panel .list-templates-item {
+  text-align: center;
+  cursor: pointer;
+  width: 45%;
+  border: 1px solid #ccc;
+}
+#templates-panel .list-templates-item:hover {
+  background-color: #f0f0f0;
+  border: 1px solid #333;
+  opacity: 0.8;
+}
+#templates-panel .list-templates-item img {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAHUlEQVQ4jWNgYGAQIYAJglEDhoUBg9+FowbQ2gAARjwKARjtnN8AAAAASUVORK5CYII=);
+  background-size: 10px 10px; 
+  max-width: 100%;
+}
+
+#templates-panel .btn {
+  margin-top: 10px;
+}
+
+.default-container .btn {
+  height: 30px !important;
+  background-color: #fff;
+  background-clip: padding-box;
+  border-radius: 4px;
+  color: #333;
+  border: 1px solid #ddd;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  font-size: 13px;
+}
+
+.default-container .btn:hover {
+  background-color: #d6d6d6;
 }
