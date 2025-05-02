@@ -180,17 +180,14 @@ class ContextMenu {
 // Listen for contextmenu event to show menu
 document.addEventListener('contextmenu', (e) => { 
   instances.forEach((menu) => {
-    console.log('Checking menu with selector:', menu.selector);
     if (e.target.matches(menu.selector) || e.target.closest(menu.selector)) {
-      console.log('Menu will be shown');
       menu.show(e);
     }
   });
 });
 
 // Listen for click event to hide menu
-document.addEventListener('click', (e) => {
-  console.log('Click event triggered', e.target);
+document.addEventListener('click', (e) => {  
   instances.forEach((menu) => {
     if (
       !e.target.matches(
