@@ -139,7 +139,8 @@ button {
 }
 
 .toolpanel.visible:not(.closed) ~ .canvas-holder {
-  padding-left: 300px;
+  margin-left: 300px;
+  width: calc(100% - 300px);
 }
 
 .toolpanel .content {
@@ -177,6 +178,7 @@ button {
 }
 
 .toolpanel  .hide-show-handler {
+  display: none;
   position: absolute;
   top: calc(50% - 40px);
   right: -42px;
