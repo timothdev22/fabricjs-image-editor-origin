@@ -49,11 +49,13 @@ try {
     canvasSizeBlock: true
   };
 
-  var imgEditor = new ImageEditor('#image-editor-container', options);
-  console.log('initialize image editor');
+  document.fonts.ready.then(() => {
+    var imgEditor = new ImageEditor('#image-editor-container', options);
+    console.log('initialize image editor');
 
-  let status = imgEditor.getCanvasJSON();
-  imgEditor.setCanvasStatus(status);
+    let status = imgEditor.getCanvasJSON();
+    imgEditor.setCanvasStatus(status);
+  });
 
 } catch (_) {
   const browserWarning = document.createElement('div')
@@ -77,3 +79,25 @@ try {
     document.body.appendChild(browserWarning)
   }
 }
+
+
+
+// const urlMap = {
+//   WorkSans:
+//     'url(fonts/WorkSans/WorkSans-Regular.ttf)',
+// };
+
+// // correctly instantiate new Fontfaces
+// const fontWorkSans = new FontFace('WorkSans', urlMap.WorkSans, {
+//   style: 'normal',
+//   weight: 'normal',
+// });
+
+// // wait for them to load
+// Promise.all([
+//   fontWorkSans.load(),
+// ]).then(() => {
+//   // add the css to the document for those loaded fonts
+//   document.fonts.add(fontWorkSans);
+//   console.log('fonts loaded');
+// });
