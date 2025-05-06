@@ -82,22 +82,22 @@ try {
 
 
 
-// const urlMap = {
-//   WorkSans:
-//     'url(fonts/WorkSans/WorkSans-Regular.ttf)',
-// };
+const urlMap = {
+  WorkSans:
+    'url(fonts/WorkSans/WorkSans-Regular.ttf)',
+};
 
-// // correctly instantiate new Fontfaces
-// const fontWorkSans = new FontFace('WorkSans', urlMap.WorkSans, {
-//   style: 'normal',
-//   weight: 'normal',
-// });
+// correctly instantiate new Fontfaces
+const fontWorkSans = new FontFace('Work Sans', urlMap.WorkSans, {
+  style: 'normal',
+  weight: 'normal',
+});
 
-// // wait for them to load
-// Promise.all([
-//   fontWorkSans.load(),
-// ]).then(() => {
-//   // add the css to the document for those loaded fonts
-//   document.fonts.add(fontWorkSans);
-//   console.log('fonts loaded');
-// });
+// wait for them to load
+Promise.all([
+  fontWorkSans.load(),
+]).then(() => {
+  // add the css to the document for those loaded fonts
+  document.fonts.add(fontWorkSans);
+  console.log('fonts loaded');
+});
