@@ -36,6 +36,34 @@ try {
     
   ];
 
+  // define custom fonts
+  const fonts = [
+    {
+      name: 'WorkSans',
+      path: 'fonts/WorkSans/WorkSans-Regular.ttf',
+      style: 'normal',
+      weight: 'normal'
+    },
+    {
+      name: 'WorkSans',
+      path: 'fonts/WorkSans/WorkSans-Bold.ttf', 
+      style: 'normal',
+      weight: 'bold'
+    },
+    {
+      name: 'WorkSans',
+      path: 'fonts/WorkSans/WorkSans-Italic.ttf',
+      style: 'italic',
+      weight: 'normal'
+    },
+    {
+      name: 'WorkSans',
+      path: 'fonts/WorkSans/WorkSans-BoldItalic.ttf',
+      style: 'italic',
+      weight: 'bold'
+    }   
+  ];
+
   // define options
   const options = {
     buttons: buttons,
@@ -46,7 +74,9 @@ try {
       height: 768
     },
     templates: templates,
-    canvasSizeBlock: true
+    canvasSizeBlock: true,
+    fonts: fonts,
+    fixedCanvas: true // By default, the canvas is dynamic
   };
 
   document.fonts.ready.then(() => {
@@ -79,25 +109,3 @@ try {
     document.body.appendChild(browserWarning)
   }
 }
-
-
-
-const urlMap = {
-  WorkSans:
-    'url(fonts/WorkSans/WorkSans-Regular.ttf)',
-};
-
-// correctly instantiate new Fontfaces
-const fontWorkSans = new FontFace('Work Sans', urlMap.WorkSans, {
-  style: 'normal',
-  weight: 'normal',
-});
-
-// wait for them to load
-Promise.all([
-  fontWorkSans.load(),
-]).then(() => {
-  // add the css to the document for those loaded fonts
-  document.fonts.add(fontWorkSans);
-  console.log('fonts loaded');
-});
