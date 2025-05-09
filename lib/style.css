@@ -16,6 +16,7 @@ button {
   height: 100%;
   display: flex;
   flex-direction: column;
+  background-color: #eaeaea;
 }
 
 .toolbar {
@@ -87,11 +88,9 @@ button {
   accent-color: #6d6d6d;
 }
 
-
-
 .canvas-holder {
   margin: auto;
-  width: 100%;
+  width: calc(100% - 200px);
   height: 100%;
   overflow: auto;
   display: flex;
@@ -99,6 +98,11 @@ button {
   justify-content: center;
   background: #eaeaea;
   position: relative;
+}
+
+.canvas-holder.fixed-canvas {
+  margin-left: 300px;
+  width: calc(100% - 500px);
 }
 
 .canvas-container {
@@ -140,7 +144,7 @@ button {
 
 .toolpanel.visible:not(.closed) ~ .canvas-holder {
   margin-left: 300px;
-  width: calc(100% - 300px);
+  width: calc(100% - 500px);
 }
 
 .toolpanel .content {
