@@ -20,6 +20,7 @@ module.exports = {
         './lib/upload.js',
         './lib/copyPaste.js',
         './lib/zoom.js',
+        './lib/layers.js',
         './lib/ruler.js',
         './lib/fullscreen.js',
         './lib/notification.js',
