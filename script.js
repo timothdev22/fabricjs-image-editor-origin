@@ -1,12 +1,76 @@
+
+// ...existing code...
+
+const llm_json = {
+  topic: "Health Benefits of Apples",
+  subtopics: [
+    {
+      title: "Nutrient-Dense Fruit",
+      content: "Apples are packed with nutrients and antioxidants (polyphenols). Eating the skin provides more fiber and polyphenols."
+    },
+    {
+      title: "Weight Management Support",
+      content: "High in fiber and water, apples promote fullness. Studies suggest apple intake may help lower Body Mass Index (BMI)."
+    },
+    {
+      title: "Heart Health Benefits",
+      content: "Linked to a lower chance of heart disease and stroke. Soluble fiber and polyphenols contribute to lower blood pressure."
+    },
+    {
+      title: "Diabetes Risk Reduction",
+      content: "Eating apples may decrease the risk of type 2 diabetes. The polyphenol quercetin may be responsible for this beneficial effect."
+    },
+    {
+      title: "Gut Health Improvement",
+      content: "Apples contain pectin, a prebiotic fiber that promotes the growth of beneficial gut bacteria. May help protect against chronic diseases."
+    },
+    {
+      title: "Potential Cancer Prevention",
+      content: "Apple polyphenols may help prevent cancerous cells from multiplying. Further clinical studies are needed to confirm this effect."
+    },
+    {
+      title: "Improved Mental and Digestive Health",
+      content: "Apples can help improve digestive diseases like GERD and constipation. Also, consuming fruits and vegetables like apples daily may improve mental health."
+    }
+  ]
+};
+function generateInfographic(template, llm) {
+  const infographic = JSON.parse(JSON.stringify(template));
+
+  let subtopicIdx = 0;
+  let isTitleSet = false;
+
+  infographic.objects = infographic.objects.map(obj => {
+    if (obj.type === "i-text") {
+      if (obj.text === "topic") {
+        obj.text = llm.topic;
+      } else if (obj.text === "title" && subtopicIdx < llm.subtopics.length) {
+        obj.text = llm.subtopics[subtopicIdx].title;
+        isTitleSet = true;
+      } else if (obj.text === "content" && subtopicIdx < llm.subtopics.length) {
+        obj.text = llm.subtopics[subtopicIdx].content;
+        if (isTitleSet) {
+          subtopicIdx++;
+          isTitleSet = false;
+        }
+      }
+    }
+    return obj;
+  });
+
+  return infographic;
+}
+// ...existing code...
+
 try {
   // define toolbar buttons to show
   // if this value is undefined or its length is 0, default toolbar buttons will be shown
   const buttons = [
     'select',
     'shapes',
-    'draw',
+    // 'draw',
     'line',
-    'path',
+    // 'path',
     'textbox',
     'upload',
     'background',
@@ -18,8 +82,8 @@ try {
     'images',
     'fullscreen',
     'templates',
-    'animation',
-    'frames'
+    // 'animation',
+    // 'frames'
   ];
 
   // define custom shapes
@@ -79,13 +143,39 @@ try {
     fixedCanvas: true // By default, the canvas is dynamic
   };
 
-  document.fonts.ready.then(() => {
-    var imgEditor = new ImageEditor('#image-editor-container', options);
-    console.log('initialize image editor');
+document.fonts.ready.then(async () => {
+  const imgEditor = new ImageEditor('#image-editor-container', options);
+  console.log('initialize image editor');
 
-    let status = imgEditor.getCanvasJSON();
-    imgEditor.setCanvasStatus(status);
+  await imgEditor.ready; // ✅ Now this is valid// ✅ wait for editor canvas setup
+
+  // ✅ Get initial status after the canvas is ready (no need to await .init)
+  let status = imgEditor.getCanvasJSON();
+  imgEditor.setCanvasStatus(status);
+
+  // ✅ Generate infographic button
+  document.getElementById('generate-infographic').addEventListener('click', function () {
+    console.log('Templates Array:', imgEditor.templates);
+
+    const templatesArr = imgEditor.templates;
+    const template_json = (templatesArr && templatesArr.length > 0)
+      ? JSON.parse(templatesArr[templatesArr.length - 1].data)
+      : null;
+
+    if (!template_json) {
+      alert('No template found!');
+      return;
+    }
+
+    console.log('Last Template JSON:', template_json);
+
+    const finalJson = generateInfographic(template_json, llm_json);
+    console.log('Modified Template JSON:', finalJson);
+
+    // ✅ No need to manually call renderAll inside callback
+    imgEditor.canvas.loadFromJSON(finalJson);
   });
+});
 
 } catch (_) {
   const browserWarning = document.createElement('div')
