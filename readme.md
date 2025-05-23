@@ -62,40 +62,55 @@ This image editor allows users to draw default shapes, pen-drawing, line, curve 
   imgEditor.setCanvasStatus(status);
 ```
 
-## Réguas e Guias
+## Rulers and Guides
 
-Esta funcionalidade permite adicionar réguas e linhas-guia para auxiliar no alinhamento de objetos, similar à função "Mostrar régua e guias (Shift+R)" do Canva.com.
+This functionality allows adding rulers and guidelines to assist in object alignment, similar to the "Show ruler and guides (Shift+R)" function from Canva.com.
 
-### Como usar:
+### How to use:
 
-1. **Ativar/Desativar Réguas**: 
-   - Clique no botão de régua na barra de ferramentas
-   - Ou use o atalho de teclado `Shift+R`
+1. **Enable/Disable Rulers**: 
+   - Click the ruler button in the toolbar
+   - Or use the keyboard shortcut `Shift+R`
 
-2. **Criar Guias**:
-   - Clique e arraste a partir da régua horizontal para criar uma guia horizontal
-   - Clique e arraste a partir da régua vertical para criar uma guia vertical
+2. **Create Guides**:
+   - Click and drag from the horizontal ruler to create a horizontal guide
+   - Click and drag from the vertical ruler to create a vertical guide
 
-3. **Mover Guias**:
-   - Selecione uma guia e arraste-a para reposicioná-la
-   - Guias horizontais só podem ser movidas verticalmente
-   - Guias verticais só podem ser movidas horizontalmente
+3. **Move Guides**:
+   - Select a guide and drag it to reposition
+   - Horizontal guides can only be moved vertically
+   - Vertical guides can only be moved horizontally
 
-4. **Excluir Guias**:
-   - Dê um duplo clique em uma guia para removê-la
+4. **Delete Guides**:
+   - Double-click on a guide to remove it
 
-As réguas mostram medidas em pixels e se ajustam automaticamente ao zoom do canvas.
+The rulers show measurements in pixels and automatically adjust to the canvas zoom.
 
-Para ativar esta funcionalidade, inclua 'ruler' na lista de botões da barra de ferramentas:
+To enable this functionality, include 'ruler' in the toolbar buttons list:
 
 ```javascript
 const buttons = [
   'select',
   'shapes',
   'draw',
-  'ruler',  // Adicione esta linha para incluir o botão de réguas
+  'ruler',  // Add this line to include the ruler button
   'undo',
   'redo',
-  // ... outros botões
+  // ... other buttons
 ];
 ```
+
+## Features
+
+### 🎨 EyeDropper
+
+The eyedropper functionality allows selecting colors from anywhere on the screen to use in editor elements. This feature utilizes the native browser `EyeDropper` API.
+
+#### Compatibility:
+
+- ✅ Chrome 95+
+- ✅ Edge 95+
+- ❌ Firefox (not yet supported)
+- ❌ Safari (not yet supported)
+
+**Note**: On unsupported browsers, the eyedropper button will not be displayed and an informative message will appear.

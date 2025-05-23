@@ -714,3 +714,136 @@ button {
 .default-container .btn:hover {
   background-color: #d6d6d6;
 }
+
+/* Estilos para o botão EyeDropper (conta-gotas) */
+.color-picker-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 50%;
+}
+
+.eyedropper-btn {
+  padding: 6px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  min-width: 32px;
+  height: 32px;
+}
+
+.eyedropper-btn:hover {
+  background-color: #f0f0f0;
+  border-color: #999;
+}
+
+.eyedropper-btn:active {
+  background-color: #e0e0e0;
+  transform: scale(0.95);
+}
+
+.eyedropper-btn svg {
+  width: 16px;
+  height: 16px;
+  color: #4c4c4c;
+}
+
+.eyedropper-btn:hover svg {
+  color: #333;
+}
+
+/* Ajuste para o spectrum quando dentro do container */
+.color-picker-container .sp-replacer {
+  flex: 1;
+  width: auto !important;
+}
+
+/* Estilos específicos para diferentes seções */
+.text-section .color-picker-container,
+.fill-section .color-picker-container,
+.border-section .color-picker-container {
+  width: 50%;
+}
+
+/* Estilo específico para o background panel */
+#background-panel .color-picker-container {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#background-panel .color-picker-container .sp-replacer {
+  flex: 1;
+  width: auto !important;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .color-picker-container {
+    gap: 4px;
+  }
+  
+  .eyedropper-btn {
+    min-width: 28px;
+    height: 28px;
+    padding: 4px;
+  }
+  
+  .eyedropper-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* Indicador visual quando EyeDropper está ativo */
+.eyedropper-btn.active {
+  background-color: #6d6d6d !important;
+  border-color: #6d6d6d !important;
+}
+
+.eyedropper-btn.active svg {
+  color: white !important;
+}
+
+/* Tooltip melhorado para o botão */
+.eyedropper-btn[title] {
+  position: relative;
+}
+
+.eyedropper-btn[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 1000;
+  opacity: 0.9;
+}
+
+/* Mensagem de aviso para navegadores não suportados */
+.eyedropper-not-supported {
+  color: #888;
+  font-size: 11px;
+  font-style: italic;
+  margin-top: 4px;
+  display: none;
+}
+
+/* Ajustes para melhor alinhamento em diferentes seções */
+.toolpanel .input-container:has(.color-picker-container) {
+  align-items: stretch;
+}
+
+.toolpanel .input-container:has(.color-picker-container) label {
+  align-self: center;
+}
