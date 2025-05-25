@@ -4,22 +4,22 @@ try {
   const buttons = [
     'select',
     'shapes',
-    'draw',
+    // 'draw',
     'line',
-    'path',
+    // 'path',
     'textbox',
-    'upload',
+    // 'upload',
     'background',
     'undo',
     'redo',
     'save',
     'download',
-    'clear',
+    // 'clear',
     'images',
-    'fullscreen',
+    // 'fullscreen',
     'templates',
-    'animation',
-    'frames'
+    // 'animation',
+    // 'frames'
   ];
 
   // define custom shapes
