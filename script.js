@@ -2,24 +2,16 @@ try {
   // define toolbar buttons to show
   // if this value is undefined or its length is 0, default toolbar buttons will be shown
   const buttons = [
-    // 'select',
+    'templates', // Moved templates first so it's the default active tab
     'shapes',
-    // 'draw',
     'line',
-    // 'path',
     'textbox',
-    // 'upload',
     'background',
     'undo',
-    'redo',
+    'redo', 
     'save',
     'download',
-    // 'clear',
-    'images',
-    // 'fullscreen',
-    'templates',
-    // 'animation',
-    // 'frames'
+    'images'
   ];
 
   // define custom shapes
@@ -32,9 +24,7 @@ try {
     `screenshots/astronaut.png`,
   ];
 
-  const templates = [
-    
-  ];
+  const templates = [];
 
   // define custom fonts
   const fonts = [
@@ -85,6 +75,11 @@ try {
 
     let status = imgEditor.getCanvasJSON();
     imgEditor.setCanvasStatus(status);
+
+    // Trigger click on templates button to show panel by default
+    setTimeout(() => {
+      document.querySelector('#toolbar button#templates').click();
+    }, 100);
   });
 
 } catch (_) {
