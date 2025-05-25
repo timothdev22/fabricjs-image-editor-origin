@@ -2,7 +2,7 @@ try {
   // define toolbar buttons to show
   // if this value is undefined or its length is 0, default toolbar buttons will be shown
   const buttons = [
-    'select',
+    // 'select',
     'shapes',
     // 'draw',
     'line',
