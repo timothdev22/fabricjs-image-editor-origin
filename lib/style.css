@@ -847,3 +847,67 @@ button {
 .toolpanel .input-container:has(.color-picker-container) label {
   align-self: center;
 }
+
+/* Layers */
+.image-editor-layers {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  background: #f2f2f2;
+  box-shadow: 0 0 3px 0 rgba(50, 50, 50, .25);
+  color: #333;
+  /* box-sizing: border-box; */
+  overflow-x: hidden;
+  overflow-y: auto; 
+}
+
+.image-editor-layers > div > p {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0;
+  padding: 10px;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.image-editor-layers .layers-list .layer-item {
+  padding: 5px;
+  margin: 2px 0;
+  background: #f2f2f2;
+  cursor: move;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* border: 2px solid transparent; */
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.image-editor-layers .layers-list .layer-item:hover {
+  /* outline: 1px solid #ccc; */
+  box-shadow: inset 5px 0 10px 0 rgba(50, 50, 50, .1);
+}
+
+.image-editor-layers .layers-list .layer-item .layer-controls button {
+  cursor: pointer;
+  background: none; 
+  border: none; 
+  color: #fff; 
+}
+
+.image-editor-layers .layers-list .layer-item .layer-controls .layer-visibility {  
+  opacity: 1;
+}
+
+.image-editor-layers .layers-list .layer-item-placeholder {
+  padding: 0;
+  margin: 0;
+  background: #f2f2f2;
+  outline: 1px dashed #6d6d6d;
+  box-shadow: inset 5px 0 10px 0 rgba(50, 50, 50, .1);
+  margin:1px 3px;
+}
