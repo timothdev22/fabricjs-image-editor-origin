@@ -90,7 +90,7 @@ button {
 
 .canvas-holder {
   margin: auto;
-  width: calc(100% - 200px);
+  width: calc(100%);
   height: 100%;
   overflow: auto;
   display: flex;
@@ -100,7 +100,18 @@ button {
   position: relative;
 }
 
+.canvas-holder.canvas-layers {
+  margin-right: 200px;
+  width: calc(100% - 200px);
+}
+
 .canvas-holder.fixed-canvas {
+  margin-left: 300px;
+  width: calc(100% - 500px);
+}
+
+.canvas-holder.fixed-canvas.canvas-layers {
+  margin-right: 200px;
   margin-left: 300px;
   width: calc(100% - 500px);
 }
@@ -898,6 +909,11 @@ button {
   border: none; 
   color: #fff; 
 }
+
+.image-editor-layers .layers-list .layer-item .layer-info .layer-name {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+} 
 
 .image-editor-layers .layers-list .layer-item .layer-controls .layer-visibility {  
   opacity: 1;
