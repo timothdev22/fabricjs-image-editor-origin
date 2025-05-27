@@ -6,6 +6,8 @@ module.exports = {
         './lib/utils.js',
         './lib/saveInBrowser.js',
         './lib/toolbar.js',
+        './lib/aligningGuidelines.js',
+        './lib/centeringGuidelines.js',
         './lib/canvas.js',
         './lib/shapes.js',
         './lib/images.js',
