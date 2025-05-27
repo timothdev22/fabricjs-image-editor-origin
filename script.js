@@ -19,7 +19,10 @@ try {
     'fullscreen',
     'templates',
     'animation',
-    'frames'
+    'frames',
+    'rect',
+    'ellipse',
+    'triangle'
   ];
 
   // define custom shapes
@@ -76,6 +79,7 @@ try {
     templates: templates,
     canvasSizeBlock: true,
     fonts: fonts,
+    layers: true,
     fixedCanvas: true // By default, the canvas is dynamic
   };
 
@@ -83,8 +87,8 @@ try {
     var imgEditor = new ImageEditor('#image-editor-container', options);
     console.log('initialize image editor');
 
-    let status = imgEditor.getCanvasJSON();
-    imgEditor.setCanvasStatus(status);
+    // let status = imgEditor.getCanvasJSON();
+    // imgEditor.setCanvasStatus(status);
   });
 
 } catch (_) {
