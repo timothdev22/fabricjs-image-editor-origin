@@ -1,14 +1,12 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://unicons.iconscout.com/release/v4.0.8/css/line.css');
+
+/* Reset and Global Settings */
+.default-container * {
   margin: 0;
-  font-family: "Open Sans", sans-serif;
-}
-
-button {
-  cursor: pointer;
-}
-
-.grp-handler-cp-c {
-  margin-left: -20px;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif
 }
 
 .default-container {
@@ -17,6 +15,15 @@ button {
   display: flex;
   flex-direction: column;
   background-color: #eaeaea;
+}
+
+
+.default-container button {
+  cursor: pointer;
+}
+
+.default-container .grp-handler-cp-c {
+  margin-left: -20px;
 }
 
 .toolbar {
@@ -926,4 +933,156 @@ button {
   outline: 1px dashed #6d6d6d;
   box-shadow: inset 5px 0 10px 0 rgba(50, 50, 50, .1);
   margin:1px 3px;
+}
+
+
+
+
+
+
+
+/* Main Actions Menu */
+#obj-menu {
+  width: fit-content;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+  position: relative;
+  display: none;
+  color: #4c4c4c;
+}
+
+#obj-menu .actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+  position: relative;
+}
+
+/* Menu Action Items */
+#obj-menu .actions-item {
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 20px;
+  font-size: 20px;
+  position: relative;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#obj-menu .actions-item:hover {
+  background: #e0e0e0;
+}
+
+#obj-menu .actions-item span {
+  font-size: 12px;
+  line-height: 1;
+  display: inline-block;
+  padding: 0 5px;
+  font-weight: 600;
+}
+
+
+
+/* Dropdown Menu Wrapper */
+.menu-wrapper {
+  visibility: hidden;
+  position: absolute;
+  min-width: 250px;
+  max-width: 300px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+  overflow: visible;
+  color: #4c4c4c
+}
+
+/* Scrollbar Styling */
+.content::-webkit-scrollbar {
+  width: 16px;
+}
+
+.content::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border: 4px solid transparent;
+  border-radius: 20px;
+  background-clip: padding-box;
+}
+
+/* Menu Content */
+.menu-wrapper .menu {
+  padding: 10px 0;
+}
+
+.menu-wrapper .content .item {
+  list-style: none;
+  font-size: 20px;
+  height: 30px;
+  display: flex;
+  width: 100%;
+  cursor: pointer;
+  align-items: center;
+  border-radius: 5px;
+  margin-bottom: 2px;
+  padding: 0 12px;
+}
+
+.menu-wrapper .content .item:hover {
+  background: #e0e0e0;
+}
+
+.menu-wrapper .content .item > div {
+  display: flex;
+  align-items: center;
+}
+
+.menu-wrapper .content .item span {
+  margin-left: 8px;
+  font-size: 12px;
+  display: flex;
+  margin-right: 10px;
+}
+
+/* Keyboard Shortcuts */
+.menu-wrapper .content .item .shortcutkey {
+  font-size: 10px;  
+  background: #e0e0e0;
+  padding: 2px 4px;
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: 0;
+  font-family: monospace;
+}
+
+/* Dividers */
+.menu-wrapper .content .divisor {
+  border-top: 1px solid #ccc;
+  margin: 5px 0;
+}
+
+/* Submenu */
+.menu-wrapper .sub-nivel {
+  position: relative;
+  justify-content: space-between;
+}
+
+.menu-wrapper .sub-nivel .sub-nivel-menu {
+  position: absolute;
+  background: #fff;
+  width: 250px;
+  top: 0;
+  padding: 13px 0;
+  opacity: 0;
+  pointer-events: none;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.08);
+  transition: 0.1s ease;
+}
+
+.menu-wrapper .sub-nivel.active .sub-nivel-menu {
+  opacity: 1;
+  pointer-events: auto;
 }
