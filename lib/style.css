@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap'); */
 @import url('https://unicons.iconscout.com/release/v4.0.8/css/line.css');
 
 /* Reset and Global Settings */
@@ -6,7 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Work Sans", sans-serif
+  font-family: sans-serif
 }
 
 .default-container {
@@ -133,9 +133,9 @@
 .toolpanel {
   background-color: #f9f9f9;
   width: 300px;
-  top: 0;
-  left: 0;
-  height: 100%;
+  top: 10px;
+  left: 10px;
+  max-height: calc(100% - 20px);
   border: 1px solid #ddd;
   transition: all .4s;
   box-sizing: border-box;
@@ -145,11 +145,13 @@
   display: none;
   position: absolute;
   z-index: 9999;
+  border-radius: 15px;
 }
 
 .toolpanel h4 {
-  font-size: 1rem;
-  font-weight: normal;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 10px 0 5px;
 }
 
 .toolpanel.closed {
@@ -166,7 +168,7 @@
 }
 
 .toolpanel .content {
-  padding: 20px;
+  padding: 10px ;
   position: relative;
   height: -webkit-fill-available;
   height: -ms-fill-available;
@@ -869,16 +871,17 @@
 /* Layers */
 .image-editor-layers {
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 10px;
+  top: 10px;
   width: 200px;
-  height: 100%;
+  max-height: calc(100% - 20px);
   background: #f2f2f2;
   box-shadow: 0 0 3px 0 rgba(50, 50, 50, .25);
   color: #333;
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
   overflow-x: hidden;
   overflow-y: auto; 
+  border-radius: 10px;
 }
 
 .image-editor-layers > div > p {
@@ -893,7 +896,7 @@
 }
 
 .image-editor-layers .layers-list .layer-item {
-  padding: 5px;
+  padding: 5px 8px;
   margin: 2px 0;
   background: #f2f2f2;
   cursor: move;
@@ -914,7 +917,8 @@
   cursor: pointer;
   background: none; 
   border: none; 
-  color: #fff; 
+  font-size: 1rem;
+
 }
 
 .image-editor-layers .layers-list .layer-item .layer-info .layer-name {
@@ -933,6 +937,18 @@
   outline: 1px dashed #6d6d6d;
   box-shadow: inset 5px 0 10px 0 rgba(50, 50, 50, .1);
   margin:1px 3px;
+}
+
+.image-editor-layers .layers-list .layer-item .layer-controls .layer-lock:hover {
+  color: #fab403;
+}
+
+.image-editor-layers .layers-list .layer-item .layer-controls .layer-visibility:hover {
+  color: #2403fa;
+}
+
+.image-editor-layers .layers-list .layer-item .layer-controls .layer-delete:hover {
+  color: #fa0303;
 }
 
 
@@ -999,12 +1015,12 @@
   overflow: visible;
   color: #4c4c4c;
   box-sizing: border-box;
-  font-family: "Work Sans", sans-serif;  
+  font-family: sans-serif;  
 }
 
 .menu-wrapper * {
   box-sizing: border-box;
-  font-family: "Work Sans", sans-serif
+  font-family: sans-serif
 }
 
 /* Scrollbar Styling */
