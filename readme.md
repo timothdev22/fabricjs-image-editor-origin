@@ -2,12 +2,14 @@
 This image editor allows users to draw default shapes, pen-drawing, line, curve + straight path, text, png/jpg/svg images on browser.
 
 [Demo!](https://fabricjs-image-editor-origin.vercel.app)
+
 ![Positioning Example](screenshots/editor.jpg)
 
 ## Dependency
   * jQuery v3.5.1
   * jQuery spectrum-colorpicker2
-  * Fabric.js v3.6.3
+  * Fabric.js v5.3.1
+  * IconScout Unicons v4.0.8
 
 ## Initialize
 ```javascript
@@ -28,6 +30,13 @@ This image editor allows users to draw default shapes, pen-drawing, line, curve 
     'download',
     'clear',
     'images'
+    'fullscreen',
+    'templates',
+    'animation',
+    'frames',
+    'rect',
+    'ellipse',
+    'triangle'
   ];
 
   // define custom shapes
@@ -42,6 +51,18 @@ This image editor allows users to draw default shapes, pen-drawing, line, curve 
     `screenshots/astronaut.png`,
   ];
 
+  const templates = [];
+
+  // define custom fonts
+  const fonts = [
+    {
+      name: 'WorkSans',
+      path: 'fonts/WorkSans/WorkSans-Regular.ttf',
+      style: 'normal',
+      weight: 'normal'
+    }
+  ];
+
   const options = {
     buttons: buttons,
     shapes: shapes,
@@ -49,7 +70,12 @@ This image editor allows users to draw default shapes, pen-drawing, line, curve 
     dimensions: {
       width: 1360,
       height: 768
-    }
+    },
+    templates: templates,
+    canvasSizeBlock: true,
+    fonts: fonts,
+    layers: true,
+    fixedCanvas: true // By default, the canvas is dynamic
   };  
 
   var imgEditor = new ImageEditor('#image-editor-container', options);
